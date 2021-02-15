@@ -2,7 +2,6 @@ User.destroy_all
 Post.destroy_all
 Comment.destroy_all
 Tag.destroy_all
-PostsTags.destroy_all
 
 riley = User.new(
   name: "Riley Slayden",
