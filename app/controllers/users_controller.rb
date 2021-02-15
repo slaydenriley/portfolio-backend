@@ -11,8 +11,9 @@ class UsersController < ApplicationController
       render :json => payload
     else
       payload = {
-        error: "Something went wrong. Please try again.",
-        status: 400
+        errors: ["Something went wrong. Please try again."],
+        status: 400,
+        logged_in: false
       }
       render :json => payload, :status => :bad_request
     end
