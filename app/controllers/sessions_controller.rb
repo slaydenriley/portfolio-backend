@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     if logged_in? && current_user
       render json: {
         logged_in: true,
-        user: UserSerializer.new(current_user).to_serialized_json,
+        user: JSON.parse(user_json),
         admin: current_user.admin
       }
     else
