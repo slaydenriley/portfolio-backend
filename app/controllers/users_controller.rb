@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by(id: user_params[:id])
-    binding.pry
     if user.update(user_params)
       users = User.all
       render json: UserSerializer.new(users).to_serialized_json
