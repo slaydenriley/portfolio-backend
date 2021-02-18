@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
 
   def is_logged_in?
     if logged_in? && current_user
+      user_json = UserSerializer.new(current_user).to_serialized_json
       render json: {
         logged_in: true,
         user: JSON.parse(user_json),
